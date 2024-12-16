@@ -1,0 +1,678 @@
+
+
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+/* Style pour le logo dans l'en-tête */
+header img.logo {
+    width: 150px; /* Redimensionne le logo (ajustez selon vos besoins) */
+    height: auto; /* Maintient les proportions du logo */
+    display: inline-block; /* Pour qu'il s'affiche à côté du texte */
+    margin-right: 20px; /* Ajoute un espace à droite du logo */
+    vertical-align: middle; /* Aligne verticalement le logo avec le texte */
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* En-tête */
+header {
+    background-color: #13d6f0;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+
+
+#presentation h2 {
+    font-size: 2.5em; /* Taille du titre */
+    color: #333; /* Couleur du texte */
+    margin-right: 20px; /* Marge à droite pour espacer le titre de l'image */
+    text-align: left; /* Aligne le titre à gauche */
+    margin-bottom: 0; /* Retire la marge sous le titre */
+}
+
+
+#presentation p {
+    font-size: 1.1em;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    flex: 1; /* Prend toute la place disponible sauf celle de l'image */
+}
+
+/* Assurez-vous que les images ont des dimensions égales */
+section#presentation .image-droite {
+    width: 48%; /* Les images occupent chacune 48% de la largeur de la section */
+    height: auto; /* Maintient le ratio de l'image pour ne pas la déformer */
+    max-height: 300px; /* Limite la hauteur des images pour qu'elles aient la même taille */
+    object-fit: cover; /* Assure que l'image couvre la zone tout en respectant ses proportions */
+    border-radius: 8px; /* Ajoute des coins arrondis pour un effet visuel agréable */
+    margin: 10px 0; /* Marge entre les images */
+}
+
+/* Responsive Design : ajuste l'affichage pour les petits écrans */
+@media (max-width: 768px) {
+    section#presentation .image-droite {
+        width: 100%; /* Les images occupent toute la largeur sur les petits écrans */
+        max-height: none; /* Enlevez la limite de hauteur sur les petits écrans */
+    }
+}
+
+
+
+
+/* Section Carte */
+#carte {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#carte h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#carte p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#map {
+    width: 60%;
+    height: 400px;
+    border-radius: 8px;
+}
+
+.chart-container {
+    width: 35%;
+    padding: 20px;
+}
+
+/* Section de la carte */
+#integration {
+    background-color: #ffffff;
+    padding: 60px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#integration h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#integration p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+#integration {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+#carte-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#graph-container {
+    width: 60%;
+    padding: 20px;
+}
+#carte2,
+#graph1 {
+    width: 100%;
+    height: 100%;
+}
+
+/* Style général pour la légende */
+.info.legend {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    width: 200px;
+}
+
+/* Titre des sections de la légende */
+.info.legend strong {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* Style pour chaque ligne de la légende */
+.info.legend i {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Style pour les catégories de communes */
+.info.legend i:nth-child(1) { background: red; }
+.info.legend i:nth-child(2) { background: green; }
+.info.legend i:nth-child(3) { background: blue; }
+.info.legend i:nth-child(4) { background: yellow; }
+.info.legend i:nth-child(5) { background: pink; }
+
+/* Style pour les catégories de confiance des bâtiments */
+.info.legend i:nth-child(6) { background: green; }
+.info.legend i:nth-child(7) { background: orange; }
+.info.legend i:nth-child(8) { background: red; }
+
+/* Espacement entre les lignes */
+.info.legend br {
+    margin-bottom: 5px;
+}
+
+
+
+/* Section Contact */
+#contact {
+    background-color: #f9f9f9; /* Couleur de fond plus claire pour un look épuré */
+    padding: 30px 20px; /* Réduction de l'espace autour du formulaire */
+    margin-bottom: 30px; /* Espacement réduit en bas */
+    border-radius: 10px; /* Coins plus arrondis pour un effet plus doux */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre subtile et plus douce */
+    max-width: 600px; /* Limiter la largeur du formulaire */
+    margin-left: auto;
+    margin-right: auto; /* Centrer le formulaire */
+}
+
+#contact h2 {
+    font-size: 1.8em; /* Taille du titre plus petite pour plus de légèreté */
+    margin-bottom: 20px;
+    color: #333; /* Texte sombre pour une bonne lisibilité */
+    font-weight: 600;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label {
+    margin-bottom: 8px; /* Moins d'espace entre le label et le champ */
+    font-size: 1em; /* Taille de police cohérente */
+    color: #555; /* Couleur du texte légèrement plus claire */
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    padding: 12px; /* Plus d'espace à l'intérieur des champs */
+    margin-bottom: 15px; /* Espacement entre les champs */
+    border: 1px solid #ddd; /* Bordure plus claire */
+    border-radius: 8px; /* Coins plus arrondis */
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box; /* Inclure le padding dans les dimensions du champ */
+    transition: border-color 0.3s ease; /* Transition de bordure */
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+    border-color: #f39c12; /* Bordure qui se colore au focus */
+    outline: none; /* Enlever le contour par défaut */
+}
+
+#contact textarea {
+    height: 150px; /* Hauteur de la zone de texte optimisée */
+}
+
+#contact input[type="submit"] {
+    padding: 12px 20px; /* Réduire l'espacement */
+    background-color: #3498db; /* Bleu vif pour un effet moderne */
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Ajouter un effet de transformation */
+}
+
+#contact input[type="submit"]:hover {
+    background-color: #2980b9; /* Changer la couleur en survol */
+    transform: scale(1.05); /* Léger effet d'agrandissement au survol */
+}
+
+#contact input[type="submit"]:active {
+    background-color: #1abc9c; /* Couleur encore plus vive quand appuyé */
+    transform: scale(1); /* Réduire l'effet d'agrandissement au clic */
+}
+
+
+
+/* Section Équipe */
+#equipe {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la section équipe */
+#equipe h2 {
+    font-size: 2.5em; /* Taille du titre */
+    color: #333; /* Couleur du texte */
+    margin: 0; /* Supprimer toute marge autour du titre */
+    text-align: left; /* Aligne le titre à gauche */
+    font-weight: bold; /* Mise en valeur du titre */
+}
+
+/* Membres de l'équipe */
+.team-member {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-member h3 {
+    font-size: 1.8em;
+    color: #333333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.team-member p {
+    font-size: 1.1em;
+    color: #777777;
+    margin-bottom: 5px;
+}
+
+.team-member p:last-child {
+    margin-bottom: 0;
+}
+
+/* Disposition en grille pour les grands écrans */
+@media (min-width: 768px) {
+    #equipe {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #equipe {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #presentation {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #presentation .image-droite {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #map {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+}
+/* Style personnalisé pour les checkboxes */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 7px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Style pour le conteneur des contrôles */
+.controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Style pour le sélecteur de commune */
+#communeSelect {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.operation-section {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+}
+
+.params-section {
+    margin-top: 10px;
+}
+
+.result-section {
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.map-controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.map-controls button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.map-controls button:hover {
+    background-color: #0056b3;
+}
+
+.result-section {
+    margin-top: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+/* Mise en page de la carte et de la section requêtes */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#requets {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#requets h2 {
+    color: #2c3e50;
+}
+
+form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: #34495e;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+#map-requets {
+    width: 100%;
+    height: 400px; /* Hauteur de la carte */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Formulaires généraux */
+form {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres de section */
+h3, h2 {
+    margin-top: 0;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Formulaire "Requêtes" */
+#requestForm {
+    margin-bottom: 30px;
+}
+
+#requestForm label, 
+#requestForm select, 
+#requestForm button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#requestForm button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#requestForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Carte interactive */
+#map-requets {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Section "Contact" */
+#contact {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contact form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#contact form input, 
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#contact form input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Espacement entre les sections */
+hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
